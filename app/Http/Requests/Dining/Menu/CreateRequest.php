@@ -25,9 +25,6 @@ class CreateRequest extends FormRequest
 
             is_null($loginedUser->chef) === false
 
-
-
-
         );
 
     }

@@ -47,7 +47,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    // 함수 setPasswordAttribut 생성 -> 변수 $password 필러블중 패스워드의 속성값을 암호화로 세팅
+    // create function setPasswordAttribut -> $password Encryption attribute
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);

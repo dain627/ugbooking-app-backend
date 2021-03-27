@@ -13,16 +13,17 @@ use App\Models\DiningList;
 
 class ShowController extends Controller
 {
-    // public function showBookingList(ShowRequest $request) // can access chef only -> Is it available to use 'Chef/ShowRequest'?
+    // public function showBookingList(ShowRequest $request) // can access chef only
     // {
     //     return response()->json([
-    //         'bookingList' =>  Auth::user()->bookings // call all booking lists
+    //         'bookingList' =>  Auth::user()->bookings // call all booking lists user for admin
     //     ]);
     // }
-    public function showAllBookingList(ShowRequest $request) // can access chef only -> Is it available to use 'Chef/ShowRequest'?
+
+    public function showAllBookingList(ShowRequest $request) // can access chef only
     {
         return response()->json([
-            'bookingList' =>  Auth::user()->chef->bookings()->with(['diningLists:id,menu_title'])->get(), // call all booking lists
+            'bookingList' =>  Auth::user()->chef->bookings()->with(['diningLists:id,menu_title'])->get(), // call booking lists with menu_title in diningList table
         ]);
     }
 

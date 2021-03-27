@@ -16,3 +16,6 @@ class LogoutController extends Controller
         ]);
     }
 }
+//It may "revoke" tokens by deleting them from database using the tokens relationship that is provided by the Laravel\Sanctum\HasApiTokens trait:
+//Revoke the token that was used to authenticate the current request.
+//https://laravel.kr/docs/8.x/sanctum#revoking-mobile-api-tokens

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ShowController extends Controller
 {
-    //  로그인한 유저만 로그인정보를 불러올 수 있도록
     public function showInfo(ShowRequest $request)
     {
         return response()->json([
