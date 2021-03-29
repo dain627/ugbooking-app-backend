@@ -30,6 +30,7 @@ DB_PASSWORD=root
 * docker exec -it your-laradock-workspace-container-name bash -c "php artisan migrate"
   
 ## Folders Structure
+```
 app - Contains all the Eloquent models
 app/Http/Controllers/Api - Contains all the api controllers
 app/Http/Middleware - Contains the JWT auth middleware
@@ -41,5 +42,5 @@ database/migrations - Contains all the database migrations
 routes - Contains all the api routes defined in api.php file
 tests/Feature - Contains the api tests
 
-
+```
 
