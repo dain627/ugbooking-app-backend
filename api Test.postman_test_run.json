@@ -1,0 +1,128 @@
+{
+	"id": "18564b29-6407-4372-b2ce-fbf8d1ced281",
+	"name": "api Test",
+	"timestamp": "2021-03-30T03:57:17.829Z",
+	"collection_id": "14b77cab-9129-49e5-849a-689bd2ec122f",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "2051510a-aa00-477b-a3df-3d75af8b08e6",
+			"name": "login as chef",
+			"url": "http://localhost:8090/api/user/login?user_id=ekdls627&password=12345678",
+			"time": 104,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				104
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d285b91c-f3c9-4904-8e93-f07d6aa2257f",
+			"name": "showbookinglist",
+			"url": "http://localhost:8090/api/booking/chef",
+			"time": 69,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				69
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "797d8019-7621-45c4-8566-10d74f9991cd",
+			"name": "register",
+			"url": "http://localhost:8090/api/user?user_id=customer627&password=12345678&first_name=wiwin&last_name=Ng&email=wiwin@gmail.com&contact_number=0489896332&user_type=customer",
+			"time": 93,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				93
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2ec05f20-95ad-4306-abfc-dbfa081cc53b",
+			"name": "login as customer",
+			"url": "http://localhost:8090/api/user/login?user_id=customer627&password=12345678",
+			"time": 116,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				116
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "26e92fa3-55b7-4621-9a2a-57d61359f445",
+			"name": "New Request",
+			"url": "http://localhost:8090/api/dining/chef",
+			"time": 62,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				62
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 444,
+	"collection": {
+		"requests": [
+			{
+				"id": "2051510a-aa00-477b-a3df-3d75af8b08e6",
+				"method": "POST"
+			},
+			{
+				"id": "d285b91c-f3c9-4904-8e93-f07d6aa2257f",
+				"method": "GET"
+			},
+			{
+				"id": "797d8019-7621-45c4-8566-10d74f9991cd",
+				"method": "POST"
+			},
+			{
+				"id": "2ec05f20-95ad-4306-abfc-dbfa081cc53b",
+				"method": "POST"
+			},
+			{
+				"id": "26e92fa3-55b7-4621-9a2a-57d61359f445",
+				"method": "POST"
+			}
+		]
+	}
+}
