@@ -26,13 +26,13 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required|string|min:8|max:20|unique:users,user_id',
-            'password' => 'required|string|min:8|max:12',
+            'user_id' => 'required|string|min:4|max:10|unique:users,user_id',
+            'password' => 'required|string|min:8|max:20',
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'email' => 'required|string|email',
             'contact_number' => 'required|numeric',
-            'user_type' => 'required|string|in:chef,customer'
+            'user_type' => 'required|string|in:chef,customer,admin'
         ];
     }
 

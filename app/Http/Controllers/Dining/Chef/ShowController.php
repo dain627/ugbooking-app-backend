@@ -14,7 +14,7 @@ class ShowController extends Controller
     public function showChefProfile(ShowRequest $request)
     {
 
-        // dd(Auth::user()->chef);
+        // dd(Auth::user()->chef); 쉐프정보 가져오기
         return response()->json([
             'chef_profile' => Auth::user()->chef
         ]);

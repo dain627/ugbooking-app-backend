@@ -19,3 +19,5 @@ class CreateController extends Controller
         );
     }
 }
+// 토큰을 헤더로 프론트로 보내고 토큰으로 로그인한 유저의 정보(멤버타입)을 알 수 있다.
+// 유저중 쉐프정보만 가져오기 'dd(Auth::user()->chef)'

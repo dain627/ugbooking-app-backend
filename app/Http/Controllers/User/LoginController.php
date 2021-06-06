@@ -17,9 +17,10 @@ class LoginController extends Controller
         //The Auth function returns an authenticator instance.
         if (Auth::attempt($credentials)) {
             $successfulLoginUser = Auth::user();
+            //Use the createToken method to issue a token
             $token = $successfulLoginUser->createToken('user_ugdining');
             return response()->json([
-                'ok' => true,
+                'login' => true,
                 'loginedUser' => $successfulLoginUser,
                 'token' => $token->plainTextToken
             ]);
@@ -27,7 +28,7 @@ class LoginController extends Controller
         }
         else {
             return response()->json(
-                ['ok' => false]
+                ['login' => false]
             );
         }
     }

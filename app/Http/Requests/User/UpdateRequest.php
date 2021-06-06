@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Dining\Menu;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UpdateRequest extends FormRequest
@@ -16,16 +17,10 @@ class UpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        // return true;
-        //업데이트하려는 다이닝 메뉴를 작성한 쉐프로 로그인 햇을때만 권한 부여.
-
         $loginedUser = Auth::user();
 
-        return $loginedUser->user_type === 'chef' && (
-
-            is_null($loginedUser->chef) === false
-
-        );
+        return $loginedUser->user_type === 'admin';
+        // Access admin user only
     }
 
     /**
@@ -36,12 +31,13 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'dining_category' => 'required|string|in:category1,category2,category3,category4,category5,category6',
-            'menu_image' => 'required|string',
-            'menu_title' => 'required|string',
-            'price' => 'required|numeric',
-            'location' => 'required|string',
-            'availability'=> 'required|string',
+            'user_id' => 'required|string|min:4|max:10|unique:users,user_id',
+            'password' => 'required|string|min:8|max:20',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'email' => 'required|string|email',
+            'contact_number' => 'required|numeric',
+            'user_type' => 'required|string|in:chef,customer,admin'
         ];
     }
     protected function failedValidation(Validator $validator): void
@@ -53,5 +49,6 @@ class UpdateRequest extends FormRequest
                 'errors' => $validator->errors()
             ], 422)
         );
+        // $this->throwUnProcessableEntityException(ValidMessage::first($validator));
     }
 }

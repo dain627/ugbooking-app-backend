@@ -12,7 +12,7 @@ class LogoutController extends Controller
     public function logout()
     {
         return response()->json([
-            'ok' => Auth::user()->currentAccessToken()->delete()
+            'logout' => Auth::user()->currentAccessToken()->delete()
         ]);
     }
 }

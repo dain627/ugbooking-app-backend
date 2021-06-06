@@ -18,7 +18,7 @@ class CreateRequest extends FormRequest
     {
         $loginedUser = Auth::user(); // 1. loginedUser
 
-        return $loginedUser->user_type === 'chef' && 
+        return $loginedUser->user_type === 'admin'||'chef' &&
         (is_null($loginedUser->chef)
         );
     }

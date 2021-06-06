@@ -21,7 +21,7 @@ class CreateRequest extends FormRequest
 
         return $loginedUser->user_type === 'chef' && (
 
-            // 1. loginedUser
+            // 1. loginedUser type is chef
 
             is_null($loginedUser->chef) === false
 

@@ -24,6 +24,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\LimitSession::class,
         \App\Http\Middleware\LoggingRequests::class,
         \App\Http\Middleware\BlockingOrigin::class,
+        // \App\Http\Middleware\CORS::class,
     ];
 
     /**
